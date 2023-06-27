@@ -12,7 +12,9 @@ enum ActionKind {
     右に進む,
     下方向に攻撃
 }
+
 let playerSprite: Sprite = null
+
 /**
  * ダンジョンスターターパック
  */
