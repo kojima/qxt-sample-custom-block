@@ -241,6 +241,7 @@ game.onUpdate(function () {
         }
     }
 })
+/*
 game.onUpdateInterval(50, function () {
     const players = sprites.allOfKind(SpriteKind.Player)
     players.forEach((sprite) => {
@@ -258,3 +259,4 @@ game.onUpdateInterval(50, function () {
         }
     })
 })
+*/
