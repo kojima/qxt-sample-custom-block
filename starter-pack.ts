@@ -243,12 +243,18 @@ game.onUpdate(function () {
 })
 game.onUpdateInterval(50, function () {
     const players = sprites.allOfKind(SpriteKind.Player)
+    players.forEach((sprite) => {
+        if (sprites.readDataBoolean(sprite, "damaging")) {
+            sprite.setFlag(SpriteFlag.Invisible, sprites.readDataBoolean(sprite, "visible"))
+            sprites.setDataBoolean(sprite, "visible", !(sprites.readDataBoolean(sprite, "visible")))
+        }
+    })
+
     const enemies = sprites.allOfKind(SpriteKind.Enemy)
-    players.concat(enemies).forEach(sprite => {
+    enemies.forEach((sprite) => {
         if (sprites.readDataBoolean(sprite, "damaging")) {
             sprite.setFlag(SpriteFlag.Invisible, sprites.readDataBoolean(sprite, "visible"))
             sprites.setDataBoolean(sprite, "visible", !(sprites.readDataBoolean(sprite, "visible")))
         }
     })
 })
-// ここにコードを追加します
